@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Testing" elementFormDefault="qualified" targetNamespace="Testing" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://psbroker.mx/PSServicios/PSServicios.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="Servicios">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Todos" />
+      <xs:enumeration value="TAE" />
+      <xs:enumeration value="Pago_de_Servicio" />
+      <xs:enumeration value="Tarjeta_Bancaria" />
+      <xs:enumeration value="Factura_Electronica" />
+      <xs:enumeration value="Fidelizacion" />
+      <xs:enumeration value="Transfer" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Servicios" nillable="true" type="tns:Servicios" />
+  <xs:simpleType name="Opcion">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Year">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Trimestre">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Mes_Y_Year">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Opcion" nillable="true" type="tns:Opcion" />
+  <xs:simpleType name="Carriers">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Todos" />
+      <xs:enumeration value="MOVISTAR" />
+      <xs:enumeration value="IUSACELL" />
+      <xs:enumeration value="TELCEL" />
+      <xs:enumeration value="UNEFON" />
+      <xs:enumeration value="NEXTEL" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Carriers" nillable="true" type="tns:Carriers" />
+  <xs:simpleType name="listas">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="grupos" />
+      <xs:enumeration value="regiones" />
+      <xs:enumeration value="perfiles" />
+      <xs:enumeration value="usuarios" />
+      <xs:enumeration value="servicios" />
+      <xs:enumeration value="monedas" />
+      <xs:enumeration value="productos" />
+      <xs:enumeration value="reglas" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="listas" nillable="true" type="tns:listas" />
+</xs:schema>

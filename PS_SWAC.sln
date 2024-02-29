@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PS_SWAC", "PS_SWAC\PS_SWAC.csproj", "{498D1E31-277F-4F22-87FC-ABBF6679D2BA}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "IntaladorSW", "IntaladorSW\IntaladorSW.vdproj", "{69D3BD30-CE25-4843-81B9-A1287BA3CC9E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{498D1E31-277F-4F22-87FC-ABBF6679D2BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{498D1E31-277F-4F22-87FC-ABBF6679D2BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{498D1E31-277F-4F22-87FC-ABBF6679D2BA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{498D1E31-277F-4F22-87FC-ABBF6679D2BA}.Debug|x86.Build.0 = Debug|Any CPU
+		{498D1E31-277F-4F22-87FC-ABBF6679D2BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{498D1E31-277F-4F22-87FC-ABBF6679D2BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{498D1E31-277F-4F22-87FC-ABBF6679D2BA}.Release|x86.ActiveCfg = Release|x86
+		{498D1E31-277F-4F22-87FC-ABBF6679D2BA}.Release|x86.Build.0 = Release|x86
+		{69D3BD30-CE25-4843-81B9-A1287BA3CC9E}.Debug|Any CPU.ActiveCfg = Debug
+		{69D3BD30-CE25-4843-81B9-A1287BA3CC9E}.Debug|x86.ActiveCfg = Debug
+		{69D3BD30-CE25-4843-81B9-A1287BA3CC9E}.Debug|x86.Build.0 = Debug
+		{69D3BD30-CE25-4843-81B9-A1287BA3CC9E}.Release|Any CPU.ActiveCfg = Release
+		{69D3BD30-CE25-4843-81B9-A1287BA3CC9E}.Release|x86.ActiveCfg = Release
+		{69D3BD30-CE25-4843-81B9-A1287BA3CC9E}.Release|x86.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

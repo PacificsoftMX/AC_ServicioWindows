@@ -1,0 +1,6 @@
+C:\Users\Aleksei\Documents\Visual Studio 2012\Projects\PS_SWAC\PS_SWAC\bin\x86\Release\PS_SWAC.exe.config
+C:\Users\Aleksei\Documents\Visual Studio 2012\Projects\PS_SWAC\PS_SWAC\obj\x86\Release\Interop.PS_FuncionesVB.dll
+C:\Users\Aleksei\Documents\Visual Studio 2012\Projects\PS_SWAC\PS_SWAC\obj\x86\Release\PS_SWAC.csproj.ResolveComReference.cache
+C:\Users\Aleksei\Documents\Visual Studio 2012\Projects\PS_SWAC\PS_SWAC\obj\x86\Release\PS_SWAC.ProjectInstaller.resources
+C:\Users\Aleksei\Documents\Visual Studio 2012\Projects\PS_SWAC\PS_SWAC\obj\x86\Release\PS_SWAC.PS_SWAC.resources
+C:\Users\Aleksei\Documents\Visual Studio 2012\Projects\PS_SWAC\PS_SWAC\obj\x86\Release\PS_SWAC.csproj.GenerateResource.Cache

@@ -1,0 +1,8 @@
+C:\Users\Aleksei\Documents\Visual Studio 2012\Projects\PS_SWAC\PS_SWAC\bin\x86\Debug\PS_SWAC.exe.config
+C:\Users\Aleksei\Documents\Visual Studio 2012\Projects\PS_SWAC\PS_SWAC\bin\x86\Debug\PS_SWAC.exe
+C:\Users\Aleksei\Documents\Visual Studio 2012\Projects\PS_SWAC\PS_SWAC\bin\x86\Debug\PS_SWAC.pdb
+C:\Users\Aleksei\Documents\Visual Studio 2012\Projects\PS_SWAC\PS_SWAC\obj\x86\Debug\PS_SWAC.ProjectInstaller.resources
+C:\Users\Aleksei\Documents\Visual Studio 2012\Projects\PS_SWAC\PS_SWAC\obj\x86\Debug\PS_SWAC.PS_SWAC.resources
+C:\Users\Aleksei\Documents\Visual Studio 2012\Projects\PS_SWAC\PS_SWAC\obj\x86\Debug\PS_SWAC.csproj.GenerateResource.Cache
+C:\Users\Aleksei\Documents\Visual Studio 2012\Projects\PS_SWAC\PS_SWAC\obj\x86\Debug\PS_SWAC.exe
+C:\Users\Aleksei\Documents\Visual Studio 2012\Projects\PS_SWAC\PS_SWAC\obj\x86\Debug\PS_SWAC.pdb

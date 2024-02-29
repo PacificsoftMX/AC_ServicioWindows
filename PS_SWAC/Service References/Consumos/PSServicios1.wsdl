@@ -1,0 +1,1616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PSServicios" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://psbroker.mx/PSServicios/PSServicios.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://psbroker.mx/PSServicios/PSServicios.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://psbroker.mx/PSServicios/PSServicios.svc?xsd=xsd2" namespace="Testing" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPSServicios_ValidaUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_ValidaUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_ValidaUsuarioAdministracion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidaUsuarioAdministracion" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_ValidaUsuarioAdministracion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidaUsuarioAdministracionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_BuscaCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscaCliente" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_BuscaCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscaClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_BuscaClienteRazon_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscaClienteRazon" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_BuscaClienteRazon_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscaClienteRazonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaClientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaClientes" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaClientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_LoginPortal_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginPortal" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_LoginPortal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginPortalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaPermisosUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaPermisosUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaPermisosUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaPermisosUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaPermisosUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaPermisosUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaPermisosUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaPermisosUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_EliminaUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_EliminaUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_ListaUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_ListaUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_ListaUsuarioPadre_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaUsuarioPadre" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_ListaUsuarioPadre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaUsuarioPadreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_ListaUsuarioHijos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaUsuarioHijos" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_ListaUsuarioHijos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaUsuarioHijosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_pathHijo_InputMessage">
+    <wsdl:part name="parameters" element="tns:pathHijo" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_pathHijo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:pathHijoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_EliminaRegion_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaRegion" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_EliminaRegion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaRegionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaRegion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaRegion" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaRegion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaRegionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_EliminaGrupo_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaGrupo" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_EliminaGrupo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaGrupoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaGrupo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaGrupo" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaGrupo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaGrupoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_EliminaProveedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaProveedor" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_EliminaProveedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaProveedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaProveedor" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaProveedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaDatosProveedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaDatosProveedor" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaDatosProveedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaDatosProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaServicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaServicio" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaServicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaServicioUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaServicioUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaServicioUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaServicioUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_EliminaSucuarsal_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaSucuarsal" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_EliminaSucuarsal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaSucuarsalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_EliminaTerminal_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaTerminal" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_EliminaTerminal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaTerminalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaTerminal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaTerminal" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaTerminal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaTerminalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaSucursal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaSucursal" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaSucursal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaSucursalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaPeriodo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaPeriodo" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaPeriodo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaPeriodoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaAplicaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaAplicaciones" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaAplicaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaAplicacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaTiposConsumo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaTiposConsumo" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaTiposConsumo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaTiposConsumoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaProducto_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaProducto" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaProducto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_EliminaProducto_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaProducto" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_EliminaProducto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaProducto_InputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaProducto" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaProducto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaProductoUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaProductoUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaProductoUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaProductoUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaProductosUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaProductosUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaProductosUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaProductosUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_BorrarProductoUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:BorrarProductoUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_BorrarProductoUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BorrarProductoUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_ApruebaPaquetesTransaccion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApruebaPaquetesTransaccion" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_ApruebaPaquetesTransaccion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApruebaPaquetesTransaccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_SaldoToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaldoToken" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_SaldoToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaldoTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_TransaccionAC_InputMessage">
+    <wsdl:part name="parameters" element="tns:TransaccionAC" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_TransaccionAC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TransaccionACResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaTablaComerciales_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaTablaComerciales" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaTablaComerciales_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaTablaComercialesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_EliminaComerciales_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaComerciales" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_EliminaComerciales_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaComercialesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaComerciales_InputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaComerciales" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaComerciales_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaComercialesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_CargaTokens_InputMessage">
+    <wsdl:part name="parameters" element="tns:CargaTokens" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_CargaTokens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CargaTokensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_TrasferenciaTokens_InputMessage">
+    <wsdl:part name="parameters" element="tns:TrasferenciaTokens" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_TrasferenciaTokens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TrasferenciaTokensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaDestinos_InputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaDestinos" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaDestinos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaDestinosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaAviso_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaAviso" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_GuardaAviso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardaAvisoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_EliminaAviso_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaAviso" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_EliminaAviso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaAvisoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaAviso_InputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaAviso" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaAviso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaAvisoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_RecargasHistoricosGrafica_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecargasHistoricosGrafica" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_RecargasHistoricosGrafica_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecargasHistoricosGraficaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_RecargaHistoricoGrid_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecargaHistoricoGrid" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_RecargaHistoricoGrid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecargaHistoricoGridResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_AgregarComercio_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarComercio" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_AgregarComercio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarComercioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_ElimanaComercio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ElimanaComercio" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_ElimanaComercio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ElimanaComercioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_HistoricosPDSGrafica_InputMessage">
+    <wsdl:part name="parameters" element="tns:HistoricosPDSGrafica" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_HistoricosPDSGrafica_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HistoricosPDSGraficaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_HistoricoPDSGrid_InputMessage">
+    <wsdl:part name="parameters" element="tns:HistoricoPDSGrid" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_HistoricoPDSGrid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HistoricoPDSGridResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_HistoricosTCGrafica_InputMessage">
+    <wsdl:part name="parameters" element="tns:HistoricosTCGrafica" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_HistoricosTCGrafica_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HistoricosTCGraficaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_HistoricoTCGrid_InputMessage">
+    <wsdl:part name="parameters" element="tns:HistoricoTCGrid" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_HistoricoTCGrid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HistoricoTCGridResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_HistoricosTranferGrafica_InputMessage">
+    <wsdl:part name="parameters" element="tns:HistoricosTranferGrafica" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_HistoricosTranferGrafica_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HistoricosTranferGraficaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_HistoricoTranferGrid_InputMessage">
+    <wsdl:part name="parameters" element="tns:HistoricoTranferGrid" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_HistoricoTranferGrid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HistoricoTranferGridResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_HistoricoSFEGrafica_InputMessage">
+    <wsdl:part name="parameters" element="tns:HistoricoSFEGrafica" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_HistoricoSFEGrafica_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HistoricoSFEGraficaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_HistoricoSFEGrid_InputMessage">
+    <wsdl:part name="parameters" element="tns:HistoricoSFEGrid" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_HistoricoSFEGrid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HistoricoSFEGridResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_ObtenerPDF_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPDF" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_ObtenerPDF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPDFResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_ObtenerCFDi_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCFDi" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_ObtenerCFDi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCFDiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_ActualizarEstatusCFDi_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarEstatusCFDi" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_ActualizarEstatusCFDi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarEstatusCFDiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaClientesFE_InputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaClientesFE" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaClientesFE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaClientesFEResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_CargarFolios_InputMessage">
+    <wsdl:part name="parameters" element="tns:CargarFolios" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_CargarFolios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CargarFoliosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_FoliosRestantes_InputMessage">
+    <wsdl:part name="parameters" element="tns:FoliosRestantes" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_FoliosRestantes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FoliosRestantesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_TranferirFolios_InputMessage">
+    <wsdl:part name="parameters" element="tns:TranferirFolios" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_TranferirFolios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TranferirFoliosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_RazonSocial_InputMessage">
+    <wsdl:part name="parameters" element="tns:RazonSocial" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_RazonSocial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RazonSocialResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_ConsultarComprasEmisores_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarComprasEmisores" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_ConsultarComprasEmisores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarComprasEmisoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_ValidacionPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidacionPassword" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_ValidacionPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidacionPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaFormatos_InputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaFormatos" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaFormatos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaFormatosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaEstatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaEstatus" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaEstatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaEstatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaLista_InputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaLista" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaLista_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaProveedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaProveedor" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_DespliegaProveedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DespliegaProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_BuscaTipoAsentamiento_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscaTipoAsentamiento" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_BuscaTipoAsentamiento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscaTipoAsentamientoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_BuscaAsentamiento_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscaAsentamiento" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_BuscaAsentamiento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscaAsentamientoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_Paises_InputMessage">
+    <wsdl:part name="parameters" element="tns:Paises" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_Paises_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PaisesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_BuscaEstados_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscaEstados" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_BuscaEstados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscaEstadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_BuscaMunicipio_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscaMunicipio" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_BuscaMunicipio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscaMunicipioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_BuscaCiudad_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscaCiudad" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_BuscaCiudad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscaCiudadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_BuscaCP_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscaCP" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_BuscaCP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscaCPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_finc_InputMessage">
+    <wsdl:part name="parameters" element="tns:finc" />
+  </wsdl:message>
+  <wsdl:message name="IPSServicios_finc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fincResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPSServicios">
+    <wsdl:operation name="ValidaUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/ValidaUsuario" message="tns:IPSServicios_ValidaUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/ValidaUsuarioResponse" message="tns:IPSServicios_ValidaUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaUsuarioAdministracion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/ValidaUsuarioAdministracion" message="tns:IPSServicios_ValidaUsuarioAdministracion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/ValidaUsuarioAdministracionResponse" message="tns:IPSServicios_ValidaUsuarioAdministracion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/BuscaCliente" message="tns:IPSServicios_BuscaCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/BuscaClienteResponse" message="tns:IPSServicios_BuscaCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaClienteRazon">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/BuscaClienteRazon" message="tns:IPSServicios_BuscaClienteRazon_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/BuscaClienteRazonResponse" message="tns:IPSServicios_BuscaClienteRazon_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardaClientes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/GuardaClientes" message="tns:IPSServicios_GuardaClientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/GuardaClientesResponse" message="tns:IPSServicios_GuardaClientes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/Login" message="tns:IPSServicios_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/LoginResponse" message="tns:IPSServicios_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginPortal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/LoginPortal" message="tns:IPSServicios_LoginPortal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/LoginPortalResponse" message="tns:IPSServicios_LoginPortal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardaUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/GuardaUsuario" message="tns:IPSServicios_GuardaUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/GuardaUsuarioResponse" message="tns:IPSServicios_GuardaUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardaPermisosUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/GuardaPermisosUsuario" message="tns:IPSServicios_GuardaPermisosUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/GuardaPermisosUsuarioResponse" message="tns:IPSServicios_GuardaPermisosUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/DespliegaUsuario" message="tns:IPSServicios_DespliegaUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/DespliegaUsuarioResponse" message="tns:IPSServicios_DespliegaUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaPermisosUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/DespliegaPermisosUsuario" message="tns:IPSServicios_DespliegaPermisosUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/DespliegaPermisosUsuarioResponse" message="tns:IPSServicios_DespliegaPermisosUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminaUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/EliminaUsuario" message="tns:IPSServicios_EliminaUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/EliminaUsuarioResponse" message="tns:IPSServicios_EliminaUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/ListaUsuario" message="tns:IPSServicios_ListaUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/ListaUsuarioResponse" message="tns:IPSServicios_ListaUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaUsuarioPadre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/ListaUsuarioPadre" message="tns:IPSServicios_ListaUsuarioPadre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/ListaUsuarioPadreResponse" message="tns:IPSServicios_ListaUsuarioPadre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaUsuarioHijos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/ListaUsuarioHijos" message="tns:IPSServicios_ListaUsuarioHijos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/ListaUsuarioHijosResponse" message="tns:IPSServicios_ListaUsuarioHijos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="pathHijo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/pathHijo" message="tns:IPSServicios_pathHijo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/pathHijoResponse" message="tns:IPSServicios_pathHijo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminaRegion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/EliminaRegion" message="tns:IPSServicios_EliminaRegion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/EliminaRegionResponse" message="tns:IPSServicios_EliminaRegion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardaRegion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/GuardaRegion" message="tns:IPSServicios_GuardaRegion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/GuardaRegionResponse" message="tns:IPSServicios_GuardaRegion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminaGrupo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/EliminaGrupo" message="tns:IPSServicios_EliminaGrupo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/EliminaGrupoResponse" message="tns:IPSServicios_EliminaGrupo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardaGrupo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/GuardaGrupo" message="tns:IPSServicios_GuardaGrupo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/GuardaGrupoResponse" message="tns:IPSServicios_GuardaGrupo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminaProveedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/EliminaProveedor" message="tns:IPSServicios_EliminaProveedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/EliminaProveedorResponse" message="tns:IPSServicios_EliminaProveedor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardaProveedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/GuardaProveedor" message="tns:IPSServicios_GuardaProveedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/GuardaProveedorResponse" message="tns:IPSServicios_GuardaProveedor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaDatosProveedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/DespliegaDatosProveedor" message="tns:IPSServicios_DespliegaDatosProveedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/DespliegaDatosProveedorResponse" message="tns:IPSServicios_DespliegaDatosProveedor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardaServicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/GuardaServicio" message="tns:IPSServicios_GuardaServicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/GuardaServicioResponse" message="tns:IPSServicios_GuardaServicio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaServicioUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/DespliegaServicioUsuario" message="tns:IPSServicios_DespliegaServicioUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/DespliegaServicioUsuarioResponse" message="tns:IPSServicios_DespliegaServicioUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminaSucuarsal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/EliminaSucuarsal" message="tns:IPSServicios_EliminaSucuarsal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/EliminaSucuarsalResponse" message="tns:IPSServicios_EliminaSucuarsal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminaTerminal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/EliminaTerminal" message="tns:IPSServicios_EliminaTerminal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/EliminaTerminalResponse" message="tns:IPSServicios_EliminaTerminal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardaTerminal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/GuardaTerminal" message="tns:IPSServicios_GuardaTerminal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/GuardaTerminalResponse" message="tns:IPSServicios_GuardaTerminal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardaSucursal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/GuardaSucursal" message="tns:IPSServicios_GuardaSucursal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/GuardaSucursalResponse" message="tns:IPSServicios_GuardaSucursal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaPeriodo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/DespliegaPeriodo" message="tns:IPSServicios_DespliegaPeriodo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/DespliegaPeriodoResponse" message="tns:IPSServicios_DespliegaPeriodo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaAplicaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/DespliegaAplicaciones" message="tns:IPSServicios_DespliegaAplicaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/DespliegaAplicacionesResponse" message="tns:IPSServicios_DespliegaAplicaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaTiposConsumo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/DespliegaTiposConsumo" message="tns:IPSServicios_DespliegaTiposConsumo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/DespliegaTiposConsumoResponse" message="tns:IPSServicios_DespliegaTiposConsumo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardaProducto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/GuardaProducto" message="tns:IPSServicios_GuardaProducto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/GuardaProductoResponse" message="tns:IPSServicios_GuardaProducto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminaProducto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/EliminaProducto" message="tns:IPSServicios_EliminaProducto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/EliminaProductoResponse" message="tns:IPSServicios_EliminaProducto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaProducto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/DespliegaProducto" message="tns:IPSServicios_DespliegaProducto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/DespliegaProductoResponse" message="tns:IPSServicios_DespliegaProducto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardaProductoUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/GuardaProductoUsuario" message="tns:IPSServicios_GuardaProductoUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/GuardaProductoUsuarioResponse" message="tns:IPSServicios_GuardaProductoUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaProductosUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/DespliegaProductosUsuario" message="tns:IPSServicios_DespliegaProductosUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/DespliegaProductosUsuarioResponse" message="tns:IPSServicios_DespliegaProductosUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrarProductoUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/BorrarProductoUsuario" message="tns:IPSServicios_BorrarProductoUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/BorrarProductoUsuarioResponse" message="tns:IPSServicios_BorrarProductoUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApruebaPaquetesTransaccion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/ApruebaPaquetesTransaccion" message="tns:IPSServicios_ApruebaPaquetesTransaccion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/ApruebaPaquetesTransaccionResponse" message="tns:IPSServicios_ApruebaPaquetesTransaccion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaldoToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/SaldoToken" message="tns:IPSServicios_SaldoToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/SaldoTokenResponse" message="tns:IPSServicios_SaldoToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TransaccionAC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/TransaccionAC" message="tns:IPSServicios_TransaccionAC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/TransaccionACResponse" message="tns:IPSServicios_TransaccionAC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardaTablaComerciales">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/GuardaTablaComerciales" message="tns:IPSServicios_GuardaTablaComerciales_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/GuardaTablaComercialesResponse" message="tns:IPSServicios_GuardaTablaComerciales_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminaComerciales">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/EliminaComerciales" message="tns:IPSServicios_EliminaComerciales_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/EliminaComercialesResponse" message="tns:IPSServicios_EliminaComerciales_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaComerciales">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/DespliegaComerciales" message="tns:IPSServicios_DespliegaComerciales_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/DespliegaComercialesResponse" message="tns:IPSServicios_DespliegaComerciales_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CargaTokens">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/CargaTokens" message="tns:IPSServicios_CargaTokens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/CargaTokensResponse" message="tns:IPSServicios_CargaTokens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TrasferenciaTokens">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/TrasferenciaTokens" message="tns:IPSServicios_TrasferenciaTokens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/TrasferenciaTokensResponse" message="tns:IPSServicios_TrasferenciaTokens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaDestinos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/DespliegaDestinos" message="tns:IPSServicios_DespliegaDestinos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/DespliegaDestinosResponse" message="tns:IPSServicios_DespliegaDestinos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardaAviso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/GuardaAviso" message="tns:IPSServicios_GuardaAviso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/GuardaAvisoResponse" message="tns:IPSServicios_GuardaAviso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminaAviso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/EliminaAviso" message="tns:IPSServicios_EliminaAviso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/EliminaAvisoResponse" message="tns:IPSServicios_EliminaAviso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaAviso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/DespliegaAviso" message="tns:IPSServicios_DespliegaAviso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/DespliegaAvisoResponse" message="tns:IPSServicios_DespliegaAviso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecargasHistoricosGrafica">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/RecargasHistoricosGrafica" message="tns:IPSServicios_RecargasHistoricosGrafica_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/RecargasHistoricosGraficaResponse" message="tns:IPSServicios_RecargasHistoricosGrafica_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecargaHistoricoGrid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/RecargaHistoricoGrid" message="tns:IPSServicios_RecargaHistoricoGrid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/RecargaHistoricoGridResponse" message="tns:IPSServicios_RecargaHistoricoGrid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarComercio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/AgregarComercio" message="tns:IPSServicios_AgregarComercio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/AgregarComercioResponse" message="tns:IPSServicios_AgregarComercio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ElimanaComercio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/ElimanaComercio" message="tns:IPSServicios_ElimanaComercio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/ElimanaComercioResponse" message="tns:IPSServicios_ElimanaComercio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HistoricosPDSGrafica">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/HistoricosPDSGrafica" message="tns:IPSServicios_HistoricosPDSGrafica_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/HistoricosPDSGraficaResponse" message="tns:IPSServicios_HistoricosPDSGrafica_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HistoricoPDSGrid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/HistoricoPDSGrid" message="tns:IPSServicios_HistoricoPDSGrid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/HistoricoPDSGridResponse" message="tns:IPSServicios_HistoricoPDSGrid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HistoricosTCGrafica">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/HistoricosTCGrafica" message="tns:IPSServicios_HistoricosTCGrafica_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/HistoricosTCGraficaResponse" message="tns:IPSServicios_HistoricosTCGrafica_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HistoricoTCGrid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/HistoricoTCGrid" message="tns:IPSServicios_HistoricoTCGrid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/HistoricoTCGridResponse" message="tns:IPSServicios_HistoricoTCGrid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HistoricosTranferGrafica">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/HistoricosTranferGrafica" message="tns:IPSServicios_HistoricosTranferGrafica_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/HistoricosTranferGraficaResponse" message="tns:IPSServicios_HistoricosTranferGrafica_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HistoricoTranferGrid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/HistoricoTranferGrid" message="tns:IPSServicios_HistoricoTranferGrid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/HistoricoTranferGridResponse" message="tns:IPSServicios_HistoricoTranferGrid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HistoricoSFEGrafica">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/HistoricoSFEGrafica" message="tns:IPSServicios_HistoricoSFEGrafica_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/HistoricoSFEGraficaResponse" message="tns:IPSServicios_HistoricoSFEGrafica_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HistoricoSFEGrid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/HistoricoSFEGrid" message="tns:IPSServicios_HistoricoSFEGrid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/HistoricoSFEGridResponse" message="tns:IPSServicios_HistoricoSFEGrid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPDF">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/ObtenerPDF" message="tns:IPSServicios_ObtenerPDF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/ObtenerPDFResponse" message="tns:IPSServicios_ObtenerPDF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCFDi">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/ObtenerCFDi" message="tns:IPSServicios_ObtenerCFDi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/ObtenerCFDiResponse" message="tns:IPSServicios_ObtenerCFDi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEstatusCFDi">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/ActualizarEstatusCFDi" message="tns:IPSServicios_ActualizarEstatusCFDi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/ActualizarEstatusCFDiResponse" message="tns:IPSServicios_ActualizarEstatusCFDi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaClientesFE">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/DespliegaClientesFE" message="tns:IPSServicios_DespliegaClientesFE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/DespliegaClientesFEResponse" message="tns:IPSServicios_DespliegaClientesFE_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CargarFolios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/CargarFolios" message="tns:IPSServicios_CargarFolios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/CargarFoliosResponse" message="tns:IPSServicios_CargarFolios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FoliosRestantes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/FoliosRestantes" message="tns:IPSServicios_FoliosRestantes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/FoliosRestantesResponse" message="tns:IPSServicios_FoliosRestantes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TranferirFolios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/TranferirFolios" message="tns:IPSServicios_TranferirFolios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/TranferirFoliosResponse" message="tns:IPSServicios_TranferirFolios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RazonSocial">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/RazonSocial" message="tns:IPSServicios_RazonSocial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/RazonSocialResponse" message="tns:IPSServicios_RazonSocial_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarComprasEmisores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/ConsultarComprasEmisores" message="tns:IPSServicios_ConsultarComprasEmisores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/ConsultarComprasEmisoresResponse" message="tns:IPSServicios_ConsultarComprasEmisores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidacionPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/ValidacionPassword" message="tns:IPSServicios_ValidacionPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/ValidacionPasswordResponse" message="tns:IPSServicios_ValidacionPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaFormatos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/DespliegaFormatos" message="tns:IPSServicios_DespliegaFormatos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/DespliegaFormatosResponse" message="tns:IPSServicios_DespliegaFormatos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaEstatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/DespliegaEstatus" message="tns:IPSServicios_DespliegaEstatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/DespliegaEstatusResponse" message="tns:IPSServicios_DespliegaEstatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaLista">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/DespliegaLista" message="tns:IPSServicios_DespliegaLista_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/DespliegaListaResponse" message="tns:IPSServicios_DespliegaLista_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaProveedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/DespliegaProveedor" message="tns:IPSServicios_DespliegaProveedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/DespliegaProveedorResponse" message="tns:IPSServicios_DespliegaProveedor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaTipoAsentamiento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/BuscaTipoAsentamiento" message="tns:IPSServicios_BuscaTipoAsentamiento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/BuscaTipoAsentamientoResponse" message="tns:IPSServicios_BuscaTipoAsentamiento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaAsentamiento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/BuscaAsentamiento" message="tns:IPSServicios_BuscaAsentamiento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/BuscaAsentamientoResponse" message="tns:IPSServicios_BuscaAsentamiento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Paises">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/Paises" message="tns:IPSServicios_Paises_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/PaisesResponse" message="tns:IPSServicios_Paises_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaEstados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/BuscaEstados" message="tns:IPSServicios_BuscaEstados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/BuscaEstadosResponse" message="tns:IPSServicios_BuscaEstados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaMunicipio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/BuscaMunicipio" message="tns:IPSServicios_BuscaMunicipio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/BuscaMunicipioResponse" message="tns:IPSServicios_BuscaMunicipio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaCiudad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/BuscaCiudad" message="tns:IPSServicios_BuscaCiudad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/BuscaCiudadResponse" message="tns:IPSServicios_BuscaCiudad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaCP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/BuscaCP" message="tns:IPSServicios_BuscaCP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/BuscaCPResponse" message="tns:IPSServicios_BuscaCP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="finc">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPSServicios/finc" message="tns:IPSServicios_finc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPSServicios/fincResponse" message="tns:IPSServicios_finc_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPSServicios" type="tns:IPSServicios">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidaUsuario">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/ValidaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaUsuarioAdministracion">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/ValidaUsuarioAdministracion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaCliente">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/BuscaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaClienteRazon">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/BuscaClienteRazon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaClientes">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/GuardaClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginPortal">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/LoginPortal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaUsuario">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/GuardaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaPermisosUsuario">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/GuardaPermisosUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaUsuario">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/DespliegaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaPermisosUsuario">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/DespliegaPermisosUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaUsuario">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/EliminaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaUsuario">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/ListaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaUsuarioPadre">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/ListaUsuarioPadre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaUsuarioHijos">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/ListaUsuarioHijos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pathHijo">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/pathHijo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaRegion">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/EliminaRegion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaRegion">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/GuardaRegion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaGrupo">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/EliminaGrupo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaGrupo">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/GuardaGrupo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaProveedor">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/EliminaProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaProveedor">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/GuardaProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaDatosProveedor">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/DespliegaDatosProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaServicio">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/GuardaServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaServicioUsuario">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/DespliegaServicioUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaSucuarsal">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/EliminaSucuarsal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaTerminal">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/EliminaTerminal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaTerminal">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/GuardaTerminal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaSucursal">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/GuardaSucursal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaPeriodo">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/DespliegaPeriodo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaAplicaciones">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/DespliegaAplicaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaTiposConsumo">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/DespliegaTiposConsumo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaProducto">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/GuardaProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaProducto">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/EliminaProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaProducto">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/DespliegaProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaProductoUsuario">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/GuardaProductoUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaProductosUsuario">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/DespliegaProductosUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarProductoUsuario">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/BorrarProductoUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApruebaPaquetesTransaccion">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/ApruebaPaquetesTransaccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaldoToken">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/SaldoToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransaccionAC">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/TransaccionAC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaTablaComerciales">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/GuardaTablaComerciales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaComerciales">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/EliminaComerciales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaComerciales">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/DespliegaComerciales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargaTokens">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/CargaTokens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TrasferenciaTokens">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/TrasferenciaTokens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaDestinos">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/DespliegaDestinos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaAviso">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/GuardaAviso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaAviso">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/EliminaAviso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaAviso">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/DespliegaAviso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecargasHistoricosGrafica">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/RecargasHistoricosGrafica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecargaHistoricoGrid">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/RecargaHistoricoGrid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarComercio">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/AgregarComercio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ElimanaComercio">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/ElimanaComercio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HistoricosPDSGrafica">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/HistoricosPDSGrafica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HistoricoPDSGrid">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/HistoricoPDSGrid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HistoricosTCGrafica">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/HistoricosTCGrafica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HistoricoTCGrid">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/HistoricoTCGrid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HistoricosTranferGrafica">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/HistoricosTranferGrafica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HistoricoTranferGrid">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/HistoricoTranferGrid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HistoricoSFEGrafica">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/HistoricoSFEGrafica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HistoricoSFEGrid">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/HistoricoSFEGrid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPDF">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/ObtenerPDF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCFDi">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/ObtenerCFDi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEstatusCFDi">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/ActualizarEstatusCFDi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaClientesFE">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/DespliegaClientesFE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarFolios">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/CargarFolios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FoliosRestantes">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/FoliosRestantes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TranferirFolios">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/TranferirFolios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RazonSocial">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/RazonSocial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarComprasEmisores">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/ConsultarComprasEmisores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidacionPassword">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/ValidacionPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaFormatos">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/DespliegaFormatos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaEstatus">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/DespliegaEstatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaLista">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/DespliegaLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DespliegaProveedor">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/DespliegaProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaTipoAsentamiento">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/BuscaTipoAsentamiento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaAsentamiento">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/BuscaAsentamiento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Paises">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/Paises" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaEstados">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/BuscaEstados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaMunicipio">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/BuscaMunicipio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaCiudad">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/BuscaCiudad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaCP">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/BuscaCP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="finc">
+      <soap:operation soapAction="http://tempuri.org/IPSServicios/finc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PSServicios">
+    <wsdl:port name="BasicHttpBinding_IPSServicios" binding="tns:BasicHttpBinding_IPSServicios">
+      <soap:address location="http://psbroker.mx/PSServicios/PSServicios.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
